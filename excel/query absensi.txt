@@ -1,0 +1,5 @@
+CREATE VIEW absenfinal AS SELECT id_absensi, `personnel_id`, `first_name`,`last_name`, `date`,
+        MIN(`time`) as jam_datang,
+        MAX(`time`) as jam_pulang
+        FROM data_absensi_temp where `personnel_id` != ''
+        GROUP BY `date`, `personnel_id`
